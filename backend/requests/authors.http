@@ -1,0 +1,80 @@
+@baseUrl=http://localhost:5000
+@userId=66b25aca00d407a8fa29295a
+@blogsId=66b266a30d30b93ab5f7cb53
+GET {{baseUrl}}/authors
+
+###
+GET {{baseUrl}}/authors/{{userId}}
+
+###
+POST {{baseUrl}}/authors
+Content-Type: application/json
+
+{
+    "nome": "Pinco",
+    "cognome": "Panco",
+    "email": "grttg@asdf.asdf",
+    "dataNascita": "2002-07-30T00:00:00.000Z",
+    "avatar": "Admin"
+}
+
+###
+
+PUT {{baseUrl}}/authors/{{userId}} 
+Content-Type: application/json
+
+{
+    "nome": "gianni"
+}
+
+###
+
+DELETE {{baseUrl}}/authors/{{userId}}
+ 
+
+
+
+
+
+
+###
+
+GET {{baseUrl}}/blogs
+
+###
+GET {{baseUrl}}/blogs/{{blogsId}}
+
+###
+POST {{baseUrl}}/blogs
+Content-Type: application/json
+
+{
+    "title": "Prov",
+    "cover": "Prov",
+    "readTime": {
+        "value": "prov",
+        "unit": "Prov"
+    },
+    "author": "Prov",
+    "content": "Prov"
+}
+
+###
+
+PUT {{baseUrl}}/blogs/{{blogsId}} 
+Content-Type: application/json
+
+{
+    "cover": "gianni"
+}
+
+###
+
+DELETE {{baseUrl}}/blogs/{{blogsId}}
+
+
+###
+GET {{baseUrl}}/authors/{{userId}}/blogPosts
+
+###
+GET {{baseUrl}}/blogs/blogPosts?title=Titolo
