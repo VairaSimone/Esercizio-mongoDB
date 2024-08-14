@@ -1,17 +1,22 @@
-// App.jsx
+// src/App.js
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import Risultati from './components/Risultati.jsx';
-import FormComponent from './components/FormComponent.jsx';
+import { Route, Routes } from 'react-router-dom';
+import Homepage from './pages/HomePage';
+import BlogDetail from './components/BlogDetail';
+import AuthorDetail from './components/AuthorDetail';
+import BlogForm from './components/BlogForm';
+import AuthorForm from './components/AuthorForm';
 
 function App() {
-  return (
-    <>
-      <Risultati />    
-      <FormComponent />
-    </>
-  );
+    return (
+        <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/blogs/:id" element={<BlogDetail />} />
+            <Route path="/authors/:id" element={<AuthorDetail />} />
+            <Route path="/create-blog" element={<BlogForm />} />
+            <Route path="/create-author" element={<AuthorForm />} />
+        </Routes>
+    );
 }
 
 export default App;
